@@ -1,3 +1,69 @@
+## Changes in 2.8.5
+  - hspec-core: Include help.txt in package tarball (close #568)
+  - hspec-discover: Require base >=4.5.0.0 (fixes #554)
+
+## Changes in 2.8.4
+  - Better support for GHC 9.2.1
+  - Support for setting options by individual environment variables, e.g.
+    `HSPEC_COLOR=yes` will set `--color`
+
+## Changes in 2.8.3
+  - Better support for `--color=auto` on Windows
+  - Add support for spec hooks to `hspec-discover` (via `SpecHooks.hs`)
+  - Propagate exceptions from `Test.Hspec.Core.Format.monadic`
+  - Re-export `aroundAll_` from `Test.Hspec`
+
+## Changes in 2.8.2
+  - Add `mapSubject` and `ignoreSubject`
+
+## Changes in 2.8.1
+  - Take the environment variable `NO_COLOR` into account
+
+## Changes in 2.8.0
+  - Add `--times` to print times for individual spec items
+  - Add `--print-slow-items`
+  - Use `-XNoImplicitPrelude` and do not rely on `base` for `hspec-discover`
+    generated test drivers. This ensures full compatibility with custom
+    preludes.
+  - Add new APIs for formatters `Test.Hspec.Core.Format` and
+    `Test.Hspec.Core.Formatters.V2`
+  - Add `getItemCount` to `Formatter` API
+  - Add `--qc-max-shrinks` (see #380)
+  - Add location information for failing `afterAll`-hooks
+  - hspec-discover: Deprecate `--no-main` and `--formatter` (use
+    `--module-name` instead) (#196)
+  - Remove `--verbose` option (this has been a noop since at least 2013)
+  - Remove `--out` option (use shell output redirection instead)
+
+## Changes in 2.7.10
+  - Add a new formatter (can be used with `--format checks`)
+  - Add `exampleStarted` to `Formatter` API
+
+## Changes in 2.7.9
+  - Re-export `aroundAll` and `aroundAllWith` from `Test.Hspec`
+
+## Changes in 2.7.8
+  - Add `aroundAll` / `aroundAllWith` (see #255)
+
+## Changes in 2.7.7
+  - Add `aroundAll_` (see #255)
+  - Correctly handle pending for `afterAll` actions
+
+## Changes in 2.7.6
+  - Add `beforeAllWith` (see #447)
+
+## Changes in 2.7.5
+  - Extract source locations from `NoMethodError` and `AssertionFailed`
+
+## Changes in 2.7.4
+  - Apply `--randomize` recursively
+
+## Changes in 2.7.3
+  - Add `--randomize`
+
+## Changes in 2.7.2
+  - Interrupt diff calculation if it takes longer than two seconds (see #415)
+
 ## Changes in 2.7.1
   - Add compatibility with QuickCheck 2.13.1 (see #410)
 
@@ -410,7 +476,7 @@ Internal changes:
  - `hspec-discover`, a mechanism for automatic spec discovery, is now an
    official part of Hspec.
    Have a look at [`hspec-discover`'s README]
-   (https://github.com/hspec/hspec/tree/master/hspec-discover#readme)
+   (https://github.com/hspec/hspec/tree/main/hspec-discover#readme)
    for a short introduction.
 
 ## Changes in 1.2.0
